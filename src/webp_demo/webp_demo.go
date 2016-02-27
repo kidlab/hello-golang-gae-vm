@@ -15,11 +15,11 @@ import (
   "os"
 )
 
-func init() {
+// We can use init() but it's too implicit.
+func InitHttpHandlers() {
   http.HandleFunc("/", handler)
   http.HandleFunc("/webp", convertWebp)
-  log.Print("Router inited!")
-  // log.Fatal(http.ListenAndServe(":8080", nil))
+  log.Print("Router initialized!")
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {

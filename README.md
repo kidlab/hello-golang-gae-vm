@@ -1,4 +1,6 @@
-### Demo GAE custom runtime
+## Demo GAE custom runtime
+
+### Development
 
 - Install packages:
 
@@ -19,14 +21,15 @@ export GOPATH=$GOPATH:$(pwd)
 go run main.go
 ```
 
-- Try it!:
+  Try it!:
 
 ```
 open http://localhost:8080/webp
 ```
 
-- Deploy:
-  * Set up Google Cloud SDK (if you haven't)
+### Deployment
+
+* Set up Google Cloud SDK (if you haven't)
 
 ```
 curl https://sdk.cloud.google.com | bash
@@ -34,14 +37,16 @@ exec -l $SHELL
 gcloud init
 ```
 
-  * Deploy to GAE:
+* Deploy to GAE:
 
 ```
 go get -u google.golang.org/appengine/cmd/aedeploy
 aedeploy gcloud preview app deploy app.yaml --promote --project "gae-custom-vm-try-2"
 ```
 
-- Try it!:
+See: https://cloud.google.com/sdk/gcloud/reference/preview/app/deploy
+
+* Try it!:
 
 ```
 open https://gae-custom-vm-try-2.appspot.com/webp

@@ -5,12 +5,15 @@
 package main
 
 import (
+  // Hacky: need to import this package to let `aedeploy` know and copy to Docker
   _ "github.com/chai2010/webp"
+
   "google.golang.org/appengine"
-  _ "google.golang.org/appengine"
-  _ "webp_demo"
+  "webp_demo"
 )
 
 func main() {
+  webp_demo.InitHttpHandlers()
+  // https://godoc.org/google.golang.org/appengine#Main
   appengine.Main()
 }
