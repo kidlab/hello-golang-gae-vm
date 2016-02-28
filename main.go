@@ -5,11 +5,8 @@
 package main
 
 import (
-  // Hacky: need to import this package to let `aedeploy` know and copy to Docker
-  _ "github.com/chai2010/webp"
-
   "google.golang.org/appengine"
-  "webp_demo"
+  "kidlab.github.com/webp_demo"
 )
 
 func main() {
